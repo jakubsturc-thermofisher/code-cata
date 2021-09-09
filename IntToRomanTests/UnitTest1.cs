@@ -7,10 +7,18 @@ namespace IntToRomanTests
     public class UnitTest1
     {
         [Fact]
-        public void Test1()
+        public void ToRoman_Zero_Return_EmptyString()
         {
-            var res = Class1.ToRoman(0);
+            var res = IntToRomanConverter.ToRoman(0);
             Assert.Empty(res);
         }
+
+        [Fact]
+        public void ToRoman_One_Return_I()
+        {
+            var res = IntToRomanConverter.ToRoman(1);
+            Assert.Equal("I", res);
+        }
+
     }
 }
