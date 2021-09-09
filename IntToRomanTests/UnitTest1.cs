@@ -1,3 +1,4 @@
+using IntToRoman;
 using System;
 using Xunit;
 
@@ -8,7 +9,8 @@ namespace IntToRomanTests
         [Fact]
         public void Test1()
         {
-
+            var res = Class1.ToRoman(0);
+            Assert.Empty(res);
         }
     }
 }
