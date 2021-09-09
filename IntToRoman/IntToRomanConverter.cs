@@ -9,10 +9,15 @@ namespace IntToRoman
         {
             return num switch
             {
-                0 => string.Empty,
-                _ when num < 0 => throw new ArgumentOutOfRangeException(nameof(num), "should be positive number"),
+                _ when num >= 1000 => "M" + ToRoman(num - 1000),
+                _ when num >= 500 => "D" + ToRoman(num - 500),
+                _ when num >= 100 => "C" + ToRoman(num - 100),
+                _ when num >= 50 => "L" + ToRoman(num - 50),
+                _ when num >= 10 => "X" + ToRoman(num - 10),
                 _ when num >= 5 => "V" + ToRoman(num - 5),
-                _ => ToRoman(num-1) + "I"
+                _ when num >= 1 => "I" + ToRoman(num - 1),
+                0 => string.Empty,
+                _ => throw new ArgumentOutOfRangeException(nameof(num), "should be positive number"),
             };
         }
     }
