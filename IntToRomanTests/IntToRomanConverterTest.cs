@@ -43,5 +43,18 @@ namespace IntToRomanTests
             Assert.Equal("MDCLXXVIII", res);
         }
 
+        [Fact]
+        public void ToRoman_4_Return_IV()
+        {
+            var res = IntToRomanConverter.ToRoman(4);
+            Assert.Equal("IV", res);
+        }
+
+        [Fact]
+        public void ToRoman_9_Return_IX()
+        {
+            var res = IntToRomanConverter.ToRoman(9);
+            Assert.Equal("IX", res);
+        }
     }
 }
