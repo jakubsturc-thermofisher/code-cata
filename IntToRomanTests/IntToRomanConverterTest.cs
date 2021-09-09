@@ -4,7 +4,7 @@ using Xunit;
 
 namespace IntToRomanTests
 {
-    public class UnitTest1
+    public class IntToRomanConverterTest
     {
         [Fact]
         public void ToRoman_Zero_Return_EmptyString()
