@@ -14,10 +14,26 @@ namespace IntToRomanTests
         }
 
         [Fact]
-        public void ToRoman_One_Return_I()
+        public void ToRoman_Negative_Throw_ArgumentException()
         {
-            var res = IntToRomanConverter.ToRoman(1);
-            Assert.Equal("I", res);
+            Assert.Throws<ArgumentOutOfRangeException>(() => IntToRomanConverter.ToRoman(-1));
+        }
+
+        [Theory]
+        [InlineData(1, "I")]
+        [InlineData(2, "II")]
+        [InlineData(3, "III")]
+        public void ToRoman_OneToThree_Return_Is(int arabic, string roman)
+        {
+            var res = IntToRomanConverter.ToRoman(arabic);
+            Assert.Equal(roman, res);
+        }
+
+        [Fact]
+        public void ToRoman_Five_Return_V()
+        {
+            var res = IntToRomanConverter.ToRoman(5);
+            Assert.Equal("V", res);
         }
 
     }
